@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hang Man Game</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	<div class="centerDiv">
+		<img id="leftImg" src="assets/images/fireworks.png">
+		<img class="centerImg" src="assets/images/Electric_Jukebox_Logo.png">
+		<img id="rightImg" src="assets/images/fireworks.png">
+	</div>
+	<div>
+		<h1>
+			<br>
+
+			Welcome to JukeBox & Hangman Game! 
+			
+			<br>
+			<br>
+		</h1>
+	</div>
+
+	<div id="statusBox">
+
+		<div class="divBorderlineBox" id="leftDiv">
+			
+			<h2 id="keyToStart">Press Any Key To Get Started!</h2>
+			<br>
+			<br>
+
+			<div id="centerScoreDiv">
+				<div id="winBox">
+					<h2>Wins</h2>
+					<br>
+					<h2 id="wins">
+						0
+					</h2>
+				</div>
+				<div id="looseBox">
+					
+					<h2>Looses</h2>
+					<br>
+					<h2 id="looses">
+						0
+					</h2>
+				</div>
+			</div>
+			
+
+			<br>
+			<br>
+			<h2>
+				Number of Guesses Remaining
+			</h2>
+
+			<br>
+			<h2 id="guess">
+				15
+			</h2>
+
+		</div>
+
+		<div class="divBorderlineBox" id="rightDiv">
+			<h1>
+				Current Words
+			</h1>
+			<br>
+			<h1 id="hangman">
+				_
+			</h1>
+			<br>
+			<br>
+			<h1>
+				Letters Already Guessed
+			</h1>
+			<br>
+			<h3 id="guessedWord">
+				_
+			</h3>
+		</div>
+	</div>
+
+	<footer>
+		All Copyrights Reserved
+	</footer>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	
+</body>
+</html>
