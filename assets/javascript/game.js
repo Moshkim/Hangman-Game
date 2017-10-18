@@ -54,6 +54,7 @@ var inventoryDictionary = {
 
 			inventoryDictionary.selectedWordArray.push(randomPickedWord.charAt(i))
 		}
+		document.getElementById("guess").innerHTML = inventoryDictionary.numberOfGuesses
 		document.getElementById("hangman").innerHTML = inventoryDictionary.placeholder
 		document.getElementById("guessedWord").innerHTML = "_"
 
@@ -100,8 +101,10 @@ document.onkeyup = function (event) {
 						inventoryDictionary.placeholderArray[i*2] = keyPressed
 					}
 				}
-
-				inventoryDictionary.numberOfGuesses -= 1
+				if (inventoryDictionary.numberOfGuesses > 0){
+					inventoryDictionary.numberOfGuesses -= 1
+				}
+				
 				inventoryDictionary.alreadyGuessedKey.push(keyPressed)
 				document.getElementById("hangman").innerHTML = inventoryDictionary.placeholderArray.join("")
 				document.getElementById("guessedWord").innerHTML = inventoryDictionary.alreadyGuessedKey
@@ -115,7 +118,7 @@ document.onkeyup = function (event) {
 				document.getElementById("wins").innerHTML = inventoryDictionary.win
 				//alert("You have succeed!:)")
 				inventoryDictionary.didWin = true
-			} else if ((inventoryDictionary.howManyCharLeft > 0)&&(inventoryDictionary.numberOfGuesses < 0)){
+			} else if ((inventoryDictionary.howManyCharLeft > 0)&&(inventoryDictionary.numberOfGuesses <= 0)){
 				inventoryDictionary.loose += 1
 				document.getElementById("looses").innerHTML = inventoryDictionary.loose
 				inventoryDictionary.didLoose = true
