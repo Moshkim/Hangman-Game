@@ -1,6 +1,8 @@
 
 var inventoryDictionary = {
 
+	music: new Audio('IU-untitled.mp4'),
+
 	isGameStarted: false,
 
 	isSameKeyPressed: false,
@@ -116,14 +118,15 @@ document.onkeyup = function (event) {
 			if ((inventoryDictionary.howManyCharLeft === 0)&&(inventoryDictionary.numberOfGuesses >= 0)){
 				inventoryDictionary.win += 1
 				document.getElementById("wins").innerHTML = inventoryDictionary.win
-				//alert("You have succeed!:)")
+
+				inventoryDictionary.music.play()
+				document.getElementById("musicName").innerHTML = "UI-Untitled is right song for you~!"
+
 				inventoryDictionary.didWin = true
 			} else if ((inventoryDictionary.howManyCharLeft > 0)&&(inventoryDictionary.numberOfGuesses <= 0)){
 				inventoryDictionary.loose += 1
 				document.getElementById("looses").innerHTML = inventoryDictionary.loose
 				inventoryDictionary.didLoose = true
-				//alert("You have failed!:/")
-				//inventoryDictionary.hangmanFunc()
 			}
 
 			$(document).ready(function(){
